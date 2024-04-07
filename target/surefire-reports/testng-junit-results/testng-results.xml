@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-04-05T19:45:35 CEST" name="Surefire suite" finished-at="2024-04-05T19:45:35 CEST" duration-ms="47">
+    <groups>
+    </groups>
+    <test started-at="2024-04-05T19:45:35 CEST" name="Surefire test" finished-at="2024-04-05T19:45:35 CEST" duration-ms="47">
+      <class name="units.NumberJUnitTests">
+        <test-method signature="testNumberJUnitTests5()" started-at="2024-04-05T19:45:35 CEST" name="testNumberJUnitTests5" finished-at="2024-04-05T19:45:35 CEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumberJUnitTests5 -->
+        <test-method signature="testNumberJUnitTests1()" started-at="2024-04-05T19:45:35 CEST" name="testNumberJUnitTests1" finished-at="2024-04-05T19:45:35 CEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumberJUnitTests1 -->
+        <test-method signature="testNumberJUnitTests3()" started-at="2024-04-05T19:45:35 CEST" name="testNumberJUnitTests3" finished-at="2024-04-05T19:45:35 CEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumberJUnitTests3 -->
+        <test-method signature="testNumberJUnitTests4()" started-at="2024-04-05T19:45:35 CEST" name="testNumberJUnitTests4" finished-at="2024-04-05T19:45:35 CEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumberJUnitTests4 -->
+        <test-method signature="testNumberJUnitTests2()" started-at="2024-04-05T19:45:35 CEST" name="testNumberJUnitTests2" finished-at="2024-04-05T19:45:35 CEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumberJUnitTests2 -->
+      </class> <!-- units.NumberJUnitTests -->
+      <class name="PersonJUnitTest">
+        <test-method signature="testPersonAge()" started-at="2024-04-05T19:45:35 CEST" name="testPersonAge" finished-at="2024-04-05T19:45:35 CEST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPersonAge -->
+      </class> <!-- PersonJUnitTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

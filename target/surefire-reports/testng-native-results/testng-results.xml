@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-04-05T19:45:35 CEST" name="Surefire suite" finished-at="2024-04-05T19:45:35 CEST" duration-ms="32">
+    <groups>
+    </groups>
+    <test started-at="2024-04-05T19:45:35 CEST" name="Surefire test" finished-at="2024-04-05T19:45:35 CEST" duration-ms="32">
+      <class name="units.NumberTestNGTests">
+        <test-method signature="testNumberTestNGTests1()[pri:0, instance:units.NumberTestNGTests@56a6d5a6]" started-at="2024-04-05T19:45:35 CEST" name="testNumberTestNGTests1" finished-at="2024-04-05T19:45:35 CEST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumberTestNGTests1 -->
+        <test-method signature="testNumberTestNGTests2()[pri:0, instance:units.NumberTestNGTests@56a6d5a6]" started-at="2024-04-05T19:45:35 CEST" name="testNumberTestNGTests2" finished-at="2024-04-05T19:45:35 CEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumberTestNGTests2 -->
+        <test-method signature="testNumberTestNGTests3()[pri:0, instance:units.NumberTestNGTests@56a6d5a6]" started-at="2024-04-05T19:45:35 CEST" name="testNumberTestNGTests3" finished-at="2024-04-05T19:45:35 CEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumberTestNGTests3 -->
+        <test-method signature="testNumberTestNGTests5()[pri:0, instance:units.NumberTestNGTests@56a6d5a6]" started-at="2024-04-05T19:45:35 CEST" name="testNumberTestNGTests5" finished-at="2024-04-05T19:45:35 CEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumberTestNGTests5 -->
+        <test-method signature="testNumberTestNGTests4()[pri:0, instance:units.NumberTestNGTests@56a6d5a6]" started-at="2024-04-05T19:45:35 CEST" name="testNumberTestNGTests4" finished-at="2024-04-05T19:45:35 CEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNumberTestNGTests4 -->
+      </class> <!-- units.NumberTestNGTests -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
