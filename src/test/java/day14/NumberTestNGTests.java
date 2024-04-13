@@ -1,5 +1,7 @@
-package units;
+package day14;
 import org.testng.annotations.Test;
+import units.Number;
+
 import static org.testng.Assert.assertEquals;
 
 public class NumberTestNGTests {

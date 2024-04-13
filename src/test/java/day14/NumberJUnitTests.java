@@ -1,6 +1,7 @@
-package units;
+package day14;
 
 import org.junit.Test;
+import units.Number;
 
 import static org.junit.Assert.assertEquals;
 
