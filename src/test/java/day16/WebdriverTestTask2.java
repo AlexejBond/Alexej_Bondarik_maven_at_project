@@ -21,15 +21,18 @@ public class WebdriverTestTask2 {
         WebDriver driver = new ChromeDriver(options);
 
         driver.get("https://www.google.com");
+        //TODO
         sleep(2000);
         driver.findElement(By.xpath("//*[@id=\'W0wltc\']/div")).click();
+        //TODO
         sleep(2000);
         driver.findElement(By.xpath("//*[@id=\'APjFqb\']")).sendKeys("погода минск weather.com");
+        //TODO
         sleep(2000);
         driver.findElement(By.xpath("//*[@id=\'jZ2SBf\']/div[1]/span")).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-        System.out.println("Temperature for tomorrow at 12:00 will be about " + driver.findElement(By.xpath("//*[@id='wob_tm']")).getText() + "°C");
-
+        System.out.println("Temperature for tomorrow at 12:00 will be about "
+                + driver.findElement(By.xpath("//*[@id='wob_tm']")).getText() + "°C");
 
 
     }
