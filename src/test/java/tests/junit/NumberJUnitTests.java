@@ -1,4 +1,4 @@
-package day14;
+package tests.junit;
 
 import org.junit.Test;
 import units.Number;
