@@ -1,4 +1,4 @@
-package driver.day16;
+package pages.google;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
