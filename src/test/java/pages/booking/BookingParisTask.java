@@ -1,19 +1,14 @@
 package pages.booking;
-
-
 import driver.WebDrivers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.sql.Driver;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -23,36 +18,57 @@ import java.util.Arrays;
 public class BookingParisTask {
     WebDriver driver = WebDrivers.getDriver();
 
-    public void clickByXpath(String Xpath) {
-//        WebElement element = driver.findElement(By.xpath(Xpath));
-//            element.click();
-        try {
-            System.out.println("Exception e");
+    public void sleepUntil(String Xpath) {
+        new WebDriverWait(driver, Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofSeconds(5))
+                .ignoring(NoSuchElementException.class)
+                .until(ExpectedConditions
+                        .invisibilityOfElementLocated(
+                                By.xpath(Xpath)));
+    }
 
-            WebElement element = driver.findElement(By.xpath(Xpath));
-            element.click();
+    public WebElement findByXpath(String Xpath) {
+        return driver.findElement(By.xpath(Xpath));
+    }
+
+    public void clickByXpath(String Xpath, boolean Silent) {
+        try {
+            findByXpath(Xpath).click();
+        } catch (Exception e) {
+        }
+    }
+
+    public void clickByXpath(String Xpath) {
+        try {
+            findByXpath(Xpath).click();
         } catch (Exception e) {
             System.out.println(Arrays.toString(e.getStackTrace()));
-            clickByXpath("//button[@aria-label='Скрыть меню входа в аккаунт.']");
-            WebElement element = driver.findElement(By.xpath(Xpath));
-            element.click();
+            clickByXpath("//button[@aria-label='Скрыть меню входа в аккаунт.']", true);
+            clickByXpath("//button[contains(@aria-label, 'Dismiss sign')]", true);
 
+            try {
+                findByXpath(Xpath).click();
+            } catch (Exception err) {
+
+            }
 
         }
     }
 
-        public void openBooking() {
+    public void openBooking() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://booking.com");
-//        clickByXpath("//button[@aria-label='Dismiss sign-in info.']/span");
+        // clickByXpath("//button[@aria-label='Dismiss sign-in info.']/span");
 
     }
 
     public void inputCity() {
+        String searchingText = "Париж, Иль-де-Франс, Франция";
         clickByXpath("//*[@id='onetrust-accept-btn-handler']");
-        driver.findElement(By.xpath("//input[@name='ss']"))
-                .sendKeys("Париж, Иль-де-Франс, Франция");
-        clickByXpath("//ul[@role='group']/li[1]");
+        WebElement el = findByXpath("//input[@name='ss']");
+        el.clear();
+        el.sendKeys(searchingText);
+        clickByXpath("//ul[@role='group']/li[@id='autocomplete-result-0' and contains(., 'Париж')]");
     }
 
     public void inputPersons() {
@@ -82,18 +98,10 @@ public class BookingParisTask {
     }
 
     public void checkboxRatingEnable() {
-        WebElement checkBoxRating = driver.findElement(By.xpath("//input[@value='review_score=60' and contains(@id,'r1')]"));
+        WebElement checkBoxRating = findByXpath("//input[@value='review_score=60' and contains(@id,'r1')]");
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkBoxRating);
-        checkBoxRating.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        clickByXpath("(//div[@data-filters-item='review_score:review_score=60'])[1]");
 
-        new WebDriverWait(driver, Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofSeconds(5))
-                .ignoring(NoSuchElementException.class)
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@data-testid='skeleton-loader-card'][1]"))
-                );
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     public void sortingEnable() {
@@ -101,12 +109,17 @@ public class BookingParisTask {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sortButton);
         sortButton.click();
         driver.findElement(By.xpath("//span[text()='Property rating (low to high)']")).click();
+        sleepUntil("//div[@data-testid='skeleton-loader-card'][1]");
     }
 
     public String getRating() {
-        return driver.findElement(By.xpath("//div[@data-testid='property-card'][1]//div[@data-testid='review-score']/div[1]/div"))
+        return findByXpath("//div[@data-testid='property-card'][1]//div[@data-testid='review-score']/div[1]/div")
                 .getText();
     }
+
+//    public void closeBrowser() {
+//        driver.close();
+//    }
 
 }
 

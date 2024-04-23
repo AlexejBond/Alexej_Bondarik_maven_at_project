@@ -20,37 +20,34 @@ public class W3SchoolsTask {
     WebDriver driver = WebDrivers.getDriver();
 
 
-    @Before
     public void openW3schoolsSite() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://www.w3schools.com/java/");
         driver.findElement(By.xpath("//*[@id='accept-choices']")).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
     }
 
 
-    @Test
     public void selectAndCopyTitleBy2Click() {
+        Keys functionalBtn = Keys.LEFT_CONTROL;
         Actions make = new Actions(driver);
         WebElement title = driver.findElement(By.xpath("//*[@id='main']/h1/span"));
         make.doubleClick(title)
-                .keyDown(Keys.LEFT_CONTROL)
+                .keyDown(functionalBtn)
                 .sendKeys("c").clickAndHold()
-                .keyUp(Keys.LEFT_CONTROL)
+                .keyUp(functionalBtn)
                 .build()
                 .perform();
 
         driver.get("https://google.com");
         driver.findElement(By.xpath("//*[@id='W0wltc']/div")).click();
-        driver.findElement(By.xpath("//*[@name='q']")).sendKeys(Keys.LEFT_CONTROL, "v");
+        driver.findElement(By.xpath("//*[@name='q']")).sendKeys(functionalBtn, "v");
         driver.findElement(By.xpath("//*[@name='q']")).sendKeys(Keys.ENTER);
-//        driver.findElement(By.xpath("//a[text()='Change to English']")).click();
 
-        List<WebElement> searchResults = driver.findElements(By.xpath("//div/h1[text()='Search Results']/../div/div"));
+        List<WebElement> searchResults = driver.findElements(
+                By.xpath("//div[contains(@data-async-context, 'query:')]/div[.//img[@data-csiid] and .//h3]"));
         String wordToCheck = "tutorial";
 
 
-       //TODO
         boolean allResultsContainSearchWord = true;
         for (WebElement result : searchResults) {
             String resultText = result.getText().toLowerCase();
@@ -64,7 +61,6 @@ public class W3SchoolsTask {
     }
 
 
-    @After
     public void closeBrowser() {
         driver.close();
     }
