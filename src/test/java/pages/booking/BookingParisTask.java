@@ -1,5 +1,5 @@
 package pages.booking;
-import driver.WebDrivers;
+import driver.Driver;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,14 +9,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.sql.Driver;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 public class BookingParisTask {
-    WebDriver driver = WebDrivers.getDriver();
+    WebDriver driver = Driver.getWebDriver();
 
     public void sleepUntil(String Xpath) {
         new WebDriverWait(driver, Duration.ofSeconds(30))
@@ -104,10 +103,10 @@ public class BookingParisTask {
 
     }
 
-    public void sortingEnable() {
-        WebElement sortButton = driver.findElement(By.xpath("//button[@data-testid='sorters-dropdown-trigger']"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sortButton);
-        sortButton.click();
+    public void sortingLowToHigh() {
+        WebElement sortBtnLowToHigh = driver.findElement(By.xpath("//button[@data-testid='sorters-dropdown-trigger']"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sortBtnLowToHigh);
+        sortBtnLowToHigh.click();
         driver.findElement(By.xpath("//span[text()='Property rating (low to high)']")).click();
         sleepUntil("//div[@data-testid='skeleton-loader-card'][1]");
     }
@@ -117,9 +116,7 @@ public class BookingParisTask {
                 .getText();
     }
 
-//    public void closeBrowser() {
-//        driver.close();
-//    }
+
 
 }
 

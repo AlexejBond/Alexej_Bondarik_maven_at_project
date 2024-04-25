@@ -1,6 +1,6 @@
 package pages.w3schools;
 
-import driver.WebDrivers;
+import driver.Driver;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,7 +17,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class W3SchoolsTask {
-    WebDriver driver = WebDrivers.getDriver();
+    WebDriver driver = Driver.getWebDriver();
 
 
     public void openW3schoolsSite() {

@@ -12,7 +12,7 @@ public class BookingTest {
 
     private BookingHomePageXpath bookingHomePageXpath = new BookingHomePageXpath();
     private BookingSearchPageXPath bookingSearchPageXPath = new BookingSearchPageXPath();
-    final double HOTEL_SCORE_EXPECTED = 6.0;
+    final double FIRST_HOTEL_SCORE_EXPECTED = 6.0;
 
     @Test
     public void bookingParisRating6PlusTest() {
@@ -25,8 +25,8 @@ public class BookingTest {
         bookingSearchPageXPath.sortingLowToHigh();
         bookingSearchPageXPath.getRatingFirstOnList();
 
-        assertEquals(String.format("Rating of first hotel is not %s", HOTEL_SCORE_EXPECTED),
-                String.format("Scored %s", HOTEL_SCORE_EXPECTED), bookingSearchPageXPath.getRatingFirstOnList());
+        assertEquals(String.format("Rating of first hotel is not %s", FIRST_HOTEL_SCORE_EXPECTED),
+                String.format("Scored %s", FIRST_HOTEL_SCORE_EXPECTED), bookingSearchPageXPath.getRatingFirstOnList());
     }
 
 }

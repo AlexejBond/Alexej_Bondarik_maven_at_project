@@ -1,7 +1,7 @@
 package pages.demoQATest;
 
 
-import driver.WebDrivers;
+import driver.Driver;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +22,7 @@ public class DemoQATest {
 
     private final static String STANDARD_MULTI_SELECT = "//select[@name='cars']";
 
-    WebDriver driver = WebDrivers.getDriver();
+    WebDriver driver = Driver.getWebDriver();
 
 
     @Test
@@ -31,7 +31,7 @@ public class DemoQATest {
         WebElement element = driver.findElement(By.xpath(OLD_STYLE_SELECT_MENU));
 
         Select select = new Select(element);
-        select.selectByValue("9");
+        select.selectByValue("3");
         assertTrue("Magenta is not selected", driver.findElement(By.xpath("//option[text()='Magenta']")).isSelected());
     }
 

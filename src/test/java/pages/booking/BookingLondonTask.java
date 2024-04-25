@@ -1,6 +1,6 @@
 package pages.booking;
 
-import driver.WebDrivers;
+import driver.Driver;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 public class BookingLondonTask {
     String searchField = "//input[@name='ss']";
 
-    WebDriver driver = WebDrivers.getDriver();
+    WebDriver driver = Driver.getWebDriver();
 
 @Test
     public void checkLondonHotel() throws InterruptedException {
