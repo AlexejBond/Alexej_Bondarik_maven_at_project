@@ -9,7 +9,7 @@ import java.util.Optional;
 import static driver.WebDriverConfig.FF;
 import static driver.WebDriverConfig.REMOTE;
 
-public class WebDrivers {
+public class Driver {
     static WebDriver driver = null;
 
     public static WebDriver getDriver() {
