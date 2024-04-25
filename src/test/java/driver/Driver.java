@@ -1,9 +1,12 @@
 package driver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -24,6 +27,13 @@ public class Driver {
             case REMOTE -> getRemoteDriver();
             default -> getChromeDriver();
         };
+    }
+
+    public static void waitForElementAppearXPath(WebDriver driver, String elToWaitForXPath) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elToWaitForXPath)));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     private static WebDriver getChromeDriver() {

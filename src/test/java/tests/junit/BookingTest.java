@@ -17,8 +17,11 @@ public class BookingTest {
     @Test
     public void bookingParisRating6PlusTest() {
         bookingHomePageXpath.openBookingHomePage();
-        bookingHomePageXpath.inputCityViaAutocomplete("Париж");
-        bookingHomePageXpath.selectDaysForStay(2, 1);
+        bookingHomePageXpath.acceptCookies();
+        bookingHomePageXpath.closeSignInPopup();
+        bookingHomePageXpath.selectCityViaEnter("Париж");
+//        bookingHomePageXpath.inputCityViaAutocomplete("Париж");
+        bookingHomePageXpath.selectDaysForStay(3, 10);
         bookingHomePageXpath.selectAdultsChildrenRooms(4, 0, 2);
         bookingHomePageXpath.clickSearchButton();
         bookingSearchPageXPath.selectReviewScore6Plus();

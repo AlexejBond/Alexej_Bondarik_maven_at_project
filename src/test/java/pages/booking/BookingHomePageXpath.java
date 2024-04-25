@@ -13,7 +13,9 @@ import java.util.NoSuchElementException;
 
 public class BookingHomePageXpath {
 
-    public static final String CLOSE_SIGN_IN_POPUP_XPATH = "//button[@aria-label='Dismiss sign-in info.']/span";
+    public static final String ACCEPT_COOKIE_XPATH = "//*[@id='onetrust-accept-btn-handler']";
+
+    public static final String CLOSE_SIGN_IN_POPUP_XPATH = "//button[@aria-label='Скрыть меню входа в аккаунт.']";
     public static final String DESTINATION_FIELD_XPATH = "//input[@name='ss']";
     public static final String FIRST_AUTOCOMPLETE_SEARCH_VALUE_XPATH = "//ul[@role='group']/li[1]";
     public static final String ADULTS_CHILDREN_ROOMS_XPATH = "//ul[@role='group']/li[1]";
@@ -29,17 +31,36 @@ public class BookingHomePageXpath {
     public void openBookingHomePage() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://booking.com");
+//        driver.findElement(By.xpath(CLOSE_COOKIE_POPUP_XPATH)).click();
+//        try {
+//            new WebDriverWait(driver, Duration.ofSeconds(10))
+//                    .ignoring(NoSuchElementException.class)
+//                    .ignoring(StaleElementReferenceException.class)
+//                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath(CLOSE_SIGN_IN_POPUP_XPATH)))
+//                    .click();
+//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//        } catch (NoSuchElementException e) {
+//            System.out.println(Arrays.toString(e.getStackTrace()));
+//        }
+    }
+
+    public void acceptCookies() {
+        Driver.waitForElementAppearXPath(driver, ACCEPT_COOKIE_XPATH);
+        ;
+        driver.findElement(By.xpath(ACCEPT_COOKIE_XPATH)).click();
+    }
+
+    public void closeSignInPopup() {
+        Driver.waitForElementAppearXPath(driver, CLOSE_SIGN_IN_POPUP_XPATH);
+
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(10))
-                    .ignoring(NoSuchElementException.class)
-                    .ignoring(StaleElementReferenceException.class)
-                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath(CLOSE_SIGN_IN_POPUP_XPATH)))
-                    .click();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        } catch (NoSuchElementException e) {
+            driver.findElement(By.xpath(CLOSE_SIGN_IN_POPUP_XPATH)).click();
+        } catch (
+                NoSuchElementException e) {
             System.out.println(Arrays.toString(e.getStackTrace()));
         }
     }
+
 
     public void inputCityViaAutocomplete(String cityName) {
         driver.findElement(By.xpath(DESTINATION_FIELD_XPATH)).sendKeys(cityName);
@@ -85,8 +106,8 @@ public class BookingHomePageXpath {
     }
 
 
-   //TODO
-   public String checkCurrencyPicker() {
+    //TODO
+    public String checkCurrencyPicker() {
         WebElement currencyBtn = driver.findElement
                 (By.xpath("//button[@data-testid='header-currency-picker-trigger']/span"));
         Actions checkAltTextCurrency = new Actions(driver);
