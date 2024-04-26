@@ -1,14 +1,13 @@
-package tests.junit;
+package tests.testng;
 
-import org.junit.After;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.booking.BookingHomePageXpath;
-import pages.booking.BookingParisTask;
 import pages.booking.BookingSearchPageXPath;
 
 import static org.junit.Assert.assertEquals;
 
-public class BookingTest {
+public class BookingTestNGTest {
 
     private BookingHomePageXpath bookingHomePageXpath = new BookingHomePageXpath();
     private BookingSearchPageXPath bookingSearchPageXPath = new BookingSearchPageXPath();
@@ -28,8 +27,7 @@ public class BookingTest {
         bookingSearchPageXPath.sortingLowToHigh();
         bookingSearchPageXPath.getRatingFirstOnList();
 
-        assertEquals(String.format("Rating of first hotel is not %s", FIRST_HOTEL_SCORE_EXPECTED),
-                String.format("Scored %s", FIRST_HOTEL_SCORE_EXPECTED), bookingSearchPageXPath.getRatingFirstOnList());
+        Assert.assertEquals(bookingSearchPageXPath.getRatingFirstOnList(), 6.0, "Rating of first hotel is not as " +
+                "expected.");
     }
-
 }

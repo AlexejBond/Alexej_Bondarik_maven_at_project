@@ -5,7 +5,7 @@ import units.Number;
 
 import static org.junit.Assert.assertEquals;
 
-public class NumberJUnitTests {
+public class NumberJUnitTest {
 
     @Test
     public void testNumberJUnitTests1() {
