@@ -31,22 +31,11 @@ public class BookingHomePageXpath {
     public void openBookingHomePage() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://booking.com");
-//        driver.findElement(By.xpath(CLOSE_COOKIE_POPUP_XPATH)).click();
-//        try {
-//            new WebDriverWait(driver, Duration.ofSeconds(10))
-//                    .ignoring(NoSuchElementException.class)
-//                    .ignoring(StaleElementReferenceException.class)
-//                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath(CLOSE_SIGN_IN_POPUP_XPATH)))
-//                    .click();
-//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-//        } catch (NoSuchElementException e) {
-//            System.out.println(Arrays.toString(e.getStackTrace()));
-//        }
     }
 
     public void acceptCookies() {
         Driver.waitForElementAppearXPath(driver, ACCEPT_COOKIE_XPATH);
-        ;
+
         driver.findElement(By.xpath(ACCEPT_COOKIE_XPATH)).click();
     }
 
