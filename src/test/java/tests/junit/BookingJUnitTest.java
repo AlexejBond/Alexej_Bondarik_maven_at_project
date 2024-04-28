@@ -4,6 +4,8 @@ import org.junit.Test;
 import pages.booking.BookingHomePageXpath;
 import pages.booking.BookingSearchPageXPath;
 
+import java.time.LocalDate;
+
 import static org.junit.Assert.assertEquals;
 
 public class BookingJUnitTest {
@@ -13,12 +15,15 @@ public class BookingJUnitTest {
 
     @Test
     public void bookingParisRating6PlusTest() {
+        int checkInDay = LocalDate.now().plusDays(2).getDayOfMonth();
+        int checkOutDay = LocalDate.now().plusDays(7).getDayOfMonth();
+
         bookingHomePageXpath.openBookingHomePage();
         bookingHomePageXpath.acceptCookies();
         bookingHomePageXpath.closeSignInPopup();
-        bookingHomePageXpath.selectCityViaEnter("Париж");
+        bookingHomePageXpath.inputAndSelectCityViaEnter("Париж");
 //        bookingHomePageXpath.inputCityViaAutocomplete("Париж");
-        bookingHomePageXpath.selectDaysForStay(3, 10);
+        bookingHomePageXpath.selectDaysForStay(checkInDay, checkOutDay);
         bookingHomePageXpath.selectAdultsChildrenRooms(4, 0, 2);
         bookingHomePageXpath.clickSearchButton();
         bookingSearchPageXPath.selectReviewScore6Plus();

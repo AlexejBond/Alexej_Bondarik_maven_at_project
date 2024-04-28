@@ -42,7 +42,7 @@ public class GoogleMainPage {
     }
 
 
-    public void getWeatherForTomorrowAtTwelveTime() {
+    public void getWeatherForTomorrowAtTwelveTime() throws InterruptedException {
         driver.findElement(By.xpath("//*[@id='W0wltc']/div")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id='APjFqb']")).sendKeys("погода минск weather.com");
