@@ -11,15 +11,15 @@ public class DemoQASelectMenuPageJUnitTest {
     @Test
     public void standardMultiSelectAudi() {
         demoQASelectMenuPage.openSelectMenuPage();
-        demoQASelectMenuPage.checkThatAudiIsSelected();
-        Assert.assertTrue("Audi is not selected", demoQASelectMenuPage.checkThatAudiIsSelected());
+        demoQASelectMenuPage.selectCar("2");
+        Assert.assertTrue("Audi is not selected", demoQASelectMenuPage.checkThatCarIsSelected("Audi"));
     }
 
     @Test
     public void oldStyleSelectMenuBlack() {
         demoQASelectMenuPage.openSelectMenuPage();
-        demoQASelectMenuPage.selectBlackColor();
-        Assert.assertTrue("Selected color is not black", demoQASelectMenuPage.checkThatBlackColorIsSelected());
+        demoQASelectMenuPage.selectColor("5");
+        Assert.assertTrue("Selected color is not black", demoQASelectMenuPage.checkThatColorIsSelected("Black"));
 
     }
 
