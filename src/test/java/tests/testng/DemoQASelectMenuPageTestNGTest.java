@@ -11,15 +11,15 @@ public class DemoQASelectMenuPageTestNGTest {
     @Test
     public void standardMultiSelectAudi() {
         demoQASelectMenuPage.openSelectMenuPage();
-        demoQASelectMenuPage.checkThatAudiIsSelected();
-        Assert.assertTrue(demoQASelectMenuPage.checkThatAudiIsSelected(), "Audi is not selected");
+        demoQASelectMenuPage.selectCar("2");
+        Assert.assertTrue(demoQASelectMenuPage.checkThatCarIsSelected("Audi"), "Audi is not selected");
     }
 
     @Test
     public void oldStyleSelectMenuBlack() {
         demoQASelectMenuPage.openSelectMenuPage();
-        demoQASelectMenuPage.selectBlackColor();
-        Assert.assertTrue(demoQASelectMenuPage.checkThatBlackColorIsSelected(), "Selected color is not black");
+        demoQASelectMenuPage.selectColor("5");
+        Assert.assertTrue(demoQASelectMenuPage.checkThatColorIsSelected("Black"), "Selected color is not Black");
 
     }
 

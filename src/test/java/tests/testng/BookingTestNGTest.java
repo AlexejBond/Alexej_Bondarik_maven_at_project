@@ -18,8 +18,8 @@ public class BookingTestNGTest {
         bookingHomePageXpath.openBookingHomePage();
         bookingHomePageXpath.acceptCookies();
         bookingHomePageXpath.closeSignInPopup();
-        bookingHomePageXpath.selectCityViaEnter("Париж");
-//        bookingHomePageXpath.inputCityViaAutocomplete("Париж");
+//        bookingHomePageXpath.selectCityViaEnter("Париж");
+        bookingHomePageXpath.inputCityViaAutocomplete("Париж");
         bookingHomePageXpath.selectDaysForStay(3, 10);
         bookingHomePageXpath.selectAdultsChildrenRooms(4, 0, 2);
         bookingHomePageXpath.clickSearchButton();

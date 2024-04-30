@@ -38,4 +38,4 @@ public class BookingSearchPageCSS {
         return driver.findElement(By.xpath(RATING_FIRST_ON_LIST_CSS)).getText();
     }
 }
-}
+
