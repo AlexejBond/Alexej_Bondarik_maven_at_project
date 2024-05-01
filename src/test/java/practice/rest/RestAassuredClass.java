@@ -6,7 +6,7 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
-public class ResAassured {
+public class RestAassuredClass {
     public static void main(String[] args) {
         RequestSpecification requestSpec = new RequestSpecBuilder()
                 .setBaseUri("http://178.124.206.46:8001/app/ws/")
@@ -14,7 +14,7 @@ public class ResAassured {
                 .setContentType(ContentType.JSON)
                 .log(LogDetail.ALL)
                 .build();
-        String testing = RestAssured
+        String restSpecSpec = RestAssured
                 .given()
                 .spec(requestSpec)
                 .body(new Search("a", true))
@@ -24,7 +24,7 @@ public class ResAassured {
                 //.extract().body().as(Search.class)
                 .extract().body().asString();
                 // .statusCode(300);
-        System.out.println(testing);
+        System.out.println(restSpecSpec);
 
 
     }
