@@ -1,0 +1,14 @@
+<Recipe>
+  <recipename>Salad</recipename>
+  <ingredlist>
+    <ingredlist>
+      <itemdescription>Tomato</itemdescription>
+      <quantity>2</quantity>
+    </ingredlist>
+    <ingredlist>
+      <itemdescription>Cucumber</itemdescription>
+      <quantity>1</quantity>
+    </ingredlist>
+  </ingredlist>
+  <preptime>3</preptime>
+</Recipe>

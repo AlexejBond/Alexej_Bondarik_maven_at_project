@@ -4,7 +4,7 @@ import units.Number;
 
 import static org.testng.Assert.assertEquals;
 
-public class NumberTestNGTests {
+public class NumberTestNGTest {
 
     @Test
     public void testNumberTestNGTests1() {

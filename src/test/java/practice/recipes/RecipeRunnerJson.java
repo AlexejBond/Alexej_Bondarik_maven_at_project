@@ -1,4 +1,4 @@
-package practice.recipe;
+package practice.recipes;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

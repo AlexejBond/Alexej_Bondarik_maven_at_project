@@ -1,4 +1,4 @@
-package practice.recipe;
+package practice.recipes;
 
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 

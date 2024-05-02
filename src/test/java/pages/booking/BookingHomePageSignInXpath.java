@@ -48,7 +48,7 @@ public class BookingHomePageSignInXpath {
         LOGGER.info("Frame was switched");
     }
 
-    public void clickAndHoldHumanConfirmationButton() {
+    public void clickAndHoldHumanConfirmButton() {
         WebElement clickAndHoldButton = driver.findElement(By.xpath(PRESS_AND_HOLD_XPATH));
         Actions actions = new Actions(driver);
         actions.clickAndHold(clickAndHoldButton);
@@ -58,6 +58,8 @@ public class BookingHomePageSignInXpath {
     public void closeGeniusPopup() {
         driver.findElement(By.xpath(CLOSE_GENIUS_POPUP_XPATH)).click();
     }
+
+
 
 
 
