@@ -1,4 +1,4 @@
-package practice.recipeJson;
+package practice.recipe;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -6,11 +6,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class RecipeRunner {
+public class RecipeRunnerJson {
     ObjectMapper objectMapper = new ObjectMapper();
 
     public static void main(String[] args) throws IOException {
-        RecipeRunner recipe = new RecipeRunner();
+        RecipeRunnerJson recipe = new RecipeRunnerJson();
         recipe.toJson();
     }
 
@@ -19,11 +19,11 @@ public class RecipeRunner {
                 Arrays.asList(new Ingredient("Tomato", 2),
                         new Ingredient("Cucumber", 1)), 3);
         objectMapper.writerWithDefaultPrettyPrinter().
-                writeValue(new File("src/test/resources/recipe3.json"), recipe);
+                writeValue(new File("src/test/resources/recipes/recipe.json"), recipe);
     }
     public void fromJson() throws IOException {
         Recipe recipe = objectMapper
-                .readValue(new File("src/test/resources/recipe3.json"), Recipe.class);
+                .readValue(new File("src/test/resources/recipe.json"), Recipe.class);
         System.out.println(recipe);
     }
 }

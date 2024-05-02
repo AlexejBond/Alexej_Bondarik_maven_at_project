@@ -1,4 +1,4 @@
-package practice.recipeJson;
+package practice.recipe;
 
 
 import java.util.List;
