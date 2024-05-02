@@ -1,4 +1,4 @@
-package practice.recipeJson;
+package practice.recipes;
 
 
 import java.util.List;
@@ -15,8 +15,7 @@ public class Recipe {
         this.preptime = preptime;
     }
 
-    public Recipe(){
-
+    public Recipe() {
     }
 
     public String getRecipename() {
@@ -65,6 +64,5 @@ public class Recipe {
     public int hashCode() {
         return Objects.hash(recipename, ingredlist, preptime);
     }
-
 
 }

@@ -1,4 +1,4 @@
-package practice.recipeJson;
+package practice.recipes;
 
 import java.util.Objects;
 
@@ -28,8 +28,7 @@ public class Ingredient {
         this.quantity = quantity;
     }
 
-    public Ingredient(){
-
+    public Ingredient() {
     }
 
     @Override
