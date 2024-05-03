@@ -34,8 +34,6 @@ public class BookingHomePageXpath {
     public static final String ADD_TO_FAVORITES_BUTTON_XPATH = "//button[@data-testid='wishlist-button']";
     public static final String END_DATE_MONTH2_XPATH = "//div[@data-testid='searchbox-datepicker-calendar']/div/div[2]/table/tbody//span[text()='%s']";
     public static final String START_DATE_MONTH2_XPATH = "//div[@data-testid='searchbox-datepicker-calendar']/div/div[2]/table/tbody//span[text()='%s']";
-
-
     WebDriver driver = Driver.getWebDriver();
 
     public void openBookingHomePage() {
@@ -161,6 +159,7 @@ public class BookingHomePageXpath {
         LOGGER.info("The search button was pressed");
     }
 
+
     public void addToFavoritesFirstAndLastHotelInTheList() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         new WebDriverWait(driver, Duration.ofSeconds(10))
@@ -193,6 +192,7 @@ public class BookingHomePageXpath {
         List<WebElement> likeButtons = driver.findElements(By.xpath(ADD_TO_FAVORITES_BUTTON_XPATH));
         LOGGER.info(likeButtons.getFirst().getAttribute("color"));
     }
+
 
 
     //TODO
