@@ -19,8 +19,9 @@ public class BookingSearchPageXPath {
     public static final String SORT_BY_BUTTON_XPATH = "//button[@data-testid='sorters-dropdown-trigger']";
 
     public static final String SORT_BY_LOW_TO_HIGH_XPATH = "//span[text()='Property rating (low to high)']";
-    public static final String RATING_FIRST_ON_LIST = "//div[@data-testid='property-card'][1]//div[@data-testid='review-score']/div[1]/div";
-    public static final String HOTEL_TEN_XPATH = "//div[@data-testid='property-card'][10]";
+    public static final String RATING_FIRST_HOTEL_ON_LIST = "//div[@data-testid='property-card'][1]//div[@data-testid" +
+            "='review-score']/div[1]/div";
+    public static final String TEN_HOTEL_XPATH = "//div[@data-testid='property-card'][10]";
 
 
 
@@ -42,12 +43,12 @@ public class BookingSearchPageXPath {
 //        sleepUntil("//div[@data-testid='skeleton-loader-card'][1]");
     }
 
-    public String getRatingFirstOnList() {
-        return driver.findElement(By.xpath(RATING_FIRST_ON_LIST)).getText();
+    public String getRatingFirstHotelOnList() {
+        return driver.findElement(By.xpath(RATING_FIRST_HOTEL_ON_LIST)).getText();
     }
 
     public void scrollToTenthHotel() {
-        WebElement tenHotel = driver.findElement(By.xpath(HOTEL_TEN_XPATH));
+        WebElement tenHotel = driver.findElement(By.xpath(TEN_HOTEL_XPATH));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", tenHotel);
         LOGGER.info("Page was scrolled to the tenth hotel in search results list");
     }
