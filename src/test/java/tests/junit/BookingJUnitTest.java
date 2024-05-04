@@ -32,9 +32,9 @@ public class BookingJUnitTest {
         bookingHomePageXpath.clickSearchButton();
         bookingSearchPageXPath.selectReviewScore6Plus();
         bookingSearchPageXPath.sortingLowToHigh();
-        bookingSearchPageXPath.getRatingFirstOnList();
+        bookingSearchPageXPath.getRatingFirstHotelOnList();
 
-        assertEquals("Rating of first hotel is not as expected.", 6.0, bookingSearchPageXPath.getRatingFirstOnList());
+        assertEquals("Rating of first hotel is not as expected.", 6.0, bookingSearchPageXPath.getRatingFirstHotelOnList());
     }
 
     @Test
