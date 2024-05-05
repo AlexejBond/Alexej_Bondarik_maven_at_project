@@ -13,15 +13,23 @@ import java.util.Properties;
 
 public class DbConnect {
     private static final Properties PROP = getProperties();
+    private static String showCategories = "DESCRIBE Categories";
+
+    private static String showCustomers = "DESCRIBE Customers";
+    private static String showEmployees = "DESCRIBE Employees";
+    private static String showOrderDetails = "DESCRIBE OrderDetails";
+    private static String showOrders = "DESCRIBE Orders";
+    private static String showProducts = "DESCRIBE Products";
+    private static String showShippers = "DESCRIBE Shippers";
+    private static String showSuppliers = "DESCRIBE Suppliers";
+    private static String selectFromZ_Train = "SELECT * FROM Z_Train";
+
 
     public static void main(String[] args) {
-//        PROP.forEach((k, v) -> System.out.println(v.toString()));
-        String query = "SHOW TABLES";
-        String listOfCategories = "DESCRIBE Categories";
 
-
-        execStatement(query, 2);
-        execStatement(listOfCategories, 1);
+        execStatement("SELECT City FROM Customers WHERE City = 'Bergamo'", 1);
+//        execStatement(listOfCategories, 1);
+//        execStatement(selectFromZ_Train, 1);
 
     }
 
@@ -65,6 +73,7 @@ public class DbConnect {
         }
     }
 }
+//        PROP.forEach((k, v) -> System.out.println(v.toString()));
 
 
 

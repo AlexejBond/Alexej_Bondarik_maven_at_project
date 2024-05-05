@@ -25,9 +25,9 @@ public class BookingTestNGTest {
         bookingHomePageXpath.clickSearchButton();
         bookingSearchPageXPath.selectReviewScore6Plus();
         bookingSearchPageXPath.sortingLowToHigh();
-        bookingSearchPageXPath.getRatingFirstOnList();
+        bookingSearchPageXPath.getRatingFirstHotelOnList();
 
-        Assert.assertEquals(bookingSearchPageXPath.getRatingFirstOnList(), 6.0, "Rating of first hotel is not as " +
+        Assert.assertEquals(bookingSearchPageXPath.getRatingFirstHotelOnList(), 6.0, "Rating of first hotel is not as " +
                 "expected.");
     }
 }
