@@ -54,10 +54,10 @@ public class BookingSearchPageXPath {
     }
     public void changeHotelCardColorsGreenAndRed() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.backgroundColor = 'green'",
-                driver.findElement(By.xpath(HOTEL_TEN_XPATH)));
+                driver.findElement(By.xpath(TEN_HOTEL_XPATH)));
         LOGGER.info("Color of background was changed to green");
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.color = 'red'",
-                driver.findElement(By.xpath(HOTEL_TEN_XPATH)));
+                driver.findElement(By.xpath(TEN_HOTEL_XPATH)));
         LOGGER.info("Color of font was changed to red");
     }
 }
